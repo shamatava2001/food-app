@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { Food } from '../shared/models/food';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FoodService {
+  constructor() {}
 
-  constructor() { }
-
-  getAll():Food[]{
+  getAll(): Food[] {
     return [
       {
         id: 1,
@@ -70,7 +69,6 @@ export class FoodService {
         imageUrl: '/assets/images/foods/food-6.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
       },
-    ]
+    ];
   }
-
 }

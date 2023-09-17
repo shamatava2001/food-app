@@ -5,9 +5,9 @@ import { Food } from '../shared/models/food';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   foods: Food[] = [];
 
   constructor(private foodService: FoodService) {}
@@ -15,5 +15,4 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     this.foods = this.foodService.getAll();
   }
-
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tag } from '../shared/models/Tag';
 import { FoodService } from '../services/food.service';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-tags',
@@ -9,9 +10,10 @@ import { FoodService } from '../services/food.service';
 })
 export class TagsComponent implements OnInit {
   constructor(private foodService: FoodService) {}
-  tags!: Tag[];
+  @Input() foodPageTags?: string[];
+  tags: Tag[] = [];
 
   ngOnInit(): void {
-    this.tags = this.foodService.getAllTags();
+    if (!this.foodPageTags) this.tags = this.foodService.getAllTags();
   }
 }

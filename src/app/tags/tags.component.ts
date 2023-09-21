@@ -11,6 +11,7 @@ import { Input } from '@angular/core';
 export class TagsComponent implements OnInit {
   constructor(private foodService: FoodService) {}
   @Input() foodPageTags?: string[];
+  @Input() justifyContent: string = 'center';
   tags: Tag[] = [];
 
   ngOnInit(): void {

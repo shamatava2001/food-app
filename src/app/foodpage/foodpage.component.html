@@ -14,7 +14,10 @@
       </span>
     </div>
     <div class="tags">
-      <app-tags [foodPageTags]="food.tags"></app-tags>
+      <app-tags
+        [foodPageTags]="food.tags"
+        [justifyContent]="'flex-start'"
+      ></app-tags>
     </div>
     <div class="cook-time">
       <span>

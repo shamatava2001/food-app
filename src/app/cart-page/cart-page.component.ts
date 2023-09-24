@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { Cart } from '../shared/models/Cart';
 import { CartItem } from '../shared/models/CartItem';
-import { FoodService } from '../services/food.service';
 
 @Component({
   selector: 'app-cart-page',
@@ -11,9 +10,7 @@ import { FoodService } from '../services/food.service';
 })
 export class CartPageComponent implements OnInit {
   cart!: Cart;
-  constructor(
-    private cartService: CartService
-    ) {}
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.refreshCart();

@@ -13,21 +13,21 @@ export class CartPageComponent implements OnInit {
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.setCart();
+    this.refreshCart();
   }
 
-  setCart(): void {
+  refreshCart(): void {
     this.cart = this.cartService.getCart();
   }
 
   removeFromCart(cartItem: CartItem): void {
     this.cartService.removeFromCart(cartItem.food.id);
-    this.setCart();
+    this.refreshCart();
   }
 
   changeQuantity(cartItem: CartItem, quantityInString: string): void {
     const quantity = parseInt(quantityInString);
     this.cartService.changeQuantity(cartItem.food.id, quantity);
-    this.setCart();
+    this.refreshCart();
   }
 }

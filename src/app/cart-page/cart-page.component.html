@@ -12,6 +12,7 @@
       <select
         #quantitySelect
         (change)="changeQuantity(cartItem, quantitySelect.value)"
+        [value]="cartItem.quantity"
       >
         <option>1</option>
         <option>2</option>
